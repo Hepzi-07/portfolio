@@ -28,6 +28,6 @@ Add your GitHub Pages link here.
 ## Contact
 
 * Email: [hepzibah307@gmail.com](mailto:hepzibah307@gmail.com)
-* LinkedIn: linkedin.com/in/hepzibah-e-99b05832b
+* LinkedIn: linkedin.com/in/hepzibah-e
 
 © 2026 Hepzibah E. All rights reserved.
