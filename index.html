@@ -35,7 +35,7 @@
 <meta name="twitter:description" content="Portfolio of Hepzibah showcasing Technical SEO, Digital Marketing, Google Analytics, Search Console, projects and certifications.">
 
 <meta name="twitter:image" content="https://hepzibah-web.netlify.app/me.jpeg">
-
+  /* ── PERSON SCHEMA ── */
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,7 +67,21 @@
   ]
 }
 </script>
-
+    /* ── WEBSITE SCHEMA ── */
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://hepzibah-web.netlify.app/#website",
+  "url": "https://hepzibah-web.netlify.app/",
+  "name": "Hepzibah Portfolio",
+  "description": "Portfolio of Hepzibah showcasing Technical SEO, Digital Marketing, Google Analytics, Search Console, projects and certifications.",
+  "publisher": {
+    "@id": "https://hepzibah-web.netlify.app/#person"
+  },
+  "inLanguage": "en"
+}
+</script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
