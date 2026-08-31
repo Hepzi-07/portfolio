@@ -373,27 +373,237 @@
       vertical-align: middle;
     }
 
-    /* ── ACHIEVEMENTS ── */
-    #achievements { background: var(--light); }
-    .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-    .ach-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.5rem 1.5rem 1.25rem;
-      box-shadow: var(--shadow);
-      display: flex; gap: 1rem; align-items: flex-start;
-      transition: transform 0.2s;
-    }
-    .ach-card:hover { transform: translateY(-3px); }
-    .ach-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      background: var(--ice); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-    }
-    .ach-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
-    .ach-card p { font-size: 0.82rem; color: var(--grey); line-height: 1.5; }
+   /* ── ACHIEVEMENTS ── */
+#achievements {
+  background: linear-gradient(135deg, #F8FAFF 0%, #EEF4FF 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#achievements::before {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: -120px;
+  right: -80px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.12) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#achievements::after {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  bottom: -120px;
+  left: -80px;
+  background: radial-gradient(
+    circle,
+    rgba(27, 79, 216, 0.10) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#achievements .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Achievement Grid */
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Achievement Card */
+.ach-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: 0 8px 30px rgba(27, 79, 216, 0.08);
+
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Hover */
+.ach-card:hover {
+  transform: translateY(-7px);
+  border-color: #9DBBFF;
+  box-shadow: 0 16px 40px rgba(27, 79, 216, 0.15);
+}
+
+/* Achievement Icon */
+.ach-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    var(--ice),
+    #DCE9FF
+  );
+
+  border: 1px solid #C7D9FF;
+  border-radius: 14px;
+
+  font-size: 1.45rem;
+
+  box-shadow:
+    0 6px 16px rgba(27, 79, 216, 0.10);
+
+  transition: transform 0.3s ease;
+}
+
+.ach-card:hover .ach-icon {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+/* Achievement Content */
+.ach-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.ach-card p {
+  font-size: 0.82rem;
+  color: var(--grey);
+  line-height: 1.6;
+}
+
+/* Highlight First Achievement */
+.ach-card:first-child {
+  border-top: 3px solid var(--blue);
+}
+
+/* Highlight Hackathon Achievement */
+.ach-card:nth-child(5) {
+  border-top: 3px solid #F59E0B;
+}
+
+/* Optional achievement badge */
+.ach-card::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 7px;
+  height: 7px;
+  background: #60A5FA;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* ── ACHIEVEMENT IMAGE SUPPORT ── */
+.ach-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* Card with image */
+.ach-card.has-image {
+  display: block;
+  padding: 1.25rem;
+}
+
+.ach-card.has-image .ach-icon {
+  display: none;
+}
+
+/* ── HACKATHON FEATURE CARD ── */
+.ach-card.hackathon {
+  background:
+    linear-gradient(
+      145deg,
+      #FFFFFF 0%,
+      #F5F8FF 100%
+    );
+
+  border: 1.5px solid #B9CEFF;
+  box-shadow: 0 12px 35px rgba(27, 79, 216, 0.13);
+}
+
+.ach-card.hackathon h4 {
+  color: var(--blue);
+}
+
+.ach-card.hackathon .ach-icon {
+  background: linear-gradient(
+    135deg,
+    #FFF7E6,
+    #FFE8B3
+  );
+
+  border-color: #F6D58A;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 900px) {
+  .ach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ach-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .ach-card {
+    padding: 1.3rem;
+  }
+
+  .ach-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 1.3rem;
+  }
+
+  .ach-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .ach-card p {
+    font-size: 0.8rem;
+  }
+
+  .ach-image {
+    height: 180px;
+  }
+}
 
     /* ── CONTACT ── */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
@@ -684,55 +894,127 @@ I'm driven by the opportunity to create impactful digital experiences that blend
 </section>
 
 <!-- ACHIEVEMENTS -->
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
   <div class="section-inner">
+
     <p class="section-label reveal">Recognition</p>
+
     <h2 class="section-title reveal">Achievements</h2>
+
     <div class="section-divider reveal"></div>
-    <div class="ach-grid">
-      <div class="ach-card reveal">
-        <div class="ach-icon">🎓</div>
+
+    <p class="achievements-intro reveal">
+      Milestones and experiences that reflect my journey across technology,
+      digital marketing, and innovation.
+    </p>
+
+    <!-- FEATURED ACHIEVEMENT -->
+    <div class="achievement-featured reveal">
+
+      <div class="achievement-image">
+        <img
+          src="aicci_hackathon.jpeg"
+          alt="AICCI National Startup Summit 2026 Hackathon"
+        >
+      </div>
+
+      <div class="achievement-content">
+
+        <span class="achievement-tag">
+          🏆 1st Runner-Up
+        </span>
+
+        <h3>AICCI National Startup Summit 2026</h3>
+
+        <div class="achievement-org">
+          Startup Hackathon · Port &amp; Logistics Track
+        </div>
+
+        <p>
+          Secured <strong>1st Runner-Up</strong> at the AICCI National Startup
+          Summit 2026 Startup Hackathon in association with StartupTN,
+          held in Thoothukudi. Presented
+          <strong>Freight Match</strong>, an AI-powered freight marketplace
+          concept for the port and logistics ecosystem.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- OTHER ACHIEVEMENTS -->
+    <div class="achievements-grid">
+
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🎓</div>
         <div>
           <h4>Academic Excellence</h4>
-          <p>Maintained a CGPA of 8.62 throughout the B.E. CSE programme at Anna University.</p>
+          <p>
+            Maintained a CGPA of 8.62 in B.E. Computer Science and
+            Engineering.
+          </p>
         </div>
       </div>
-      <div class="ach-card reveal">
-        <div class="ach-icon">📊</div>
+
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">📊</div>
         <div>
-          <h4>IBM Cognos Certified</h4>
-          <p>Successfully completed IBM Cognos Analytics internship with a focus on data-driven decision making.</p>
+          <h4>IBM Cognos Analytics</h4>
+          <p>
+            Gained practical experience in business intelligence,
+            data visualization, and report generation.
+          </p>
         </div>
       </div>
-      <div class="ach-card reveal">
-        <div class="ach-icon">💼</div>
+
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">💻</div>
         <div>
-          <h4>4 Industry Internships</h4>
-          <p>Secured and completed four diverse internships spanning marketing, data analytics, and web development.</p>
+          <h4>Web Development Certification</h4>
+          <p>
+            Earned a Web Development certification covering HTML,
+            CSS, JavaScript, and responsive design.
+          </p>
         </div>
       </div>
-      <div class="ach-card reveal">
-        <div class="ach-icon">🌐</div>
+
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">📱</div>
         <div>
-          <h4>Cross-Domain Versatility</h4>
-          <p>Bridged the gap between technical CSE skills and creative digital marketing in professional settings.</p>
+          <h4>Digital Marketing Experience</h4>
+          <p>
+            Developed practical experience in content writing,
+            content editing, content planning, social media management,
+            and basic SEO.
+          </p>
         </div>
       </div>
-      <div class="ach-card reveal">
-        <div class="ach-icon">💻</div>
+
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🚀</div>
         <div>
-          <h4>Certified Web Developer</h4>
-          <p> Earned a Web Development certification from Corizo, demonstrating proficiency in HTML, CSS, JavaScript, responsive design, and modern web development practices.</p>
+          <h4>Cross-Domain Experience</h4>
+          <p>
+            Combined technical CSE knowledge with digital marketing,
+            analytics, content, and creative skills.
+          </p>
         </div>
       </div>
-      <div class="ach-card reveal">
-        <div class="ach-icon">📱</div>
+
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🌐</div>
         <div>
-          <h4>Social Media Strategy</h4>
-          <p>Actively driving brand growth and audience engagement through structured social media campaigns.</p>
+          <h4>Industry Internships</h4>
+          <p>
+            Completed internships across Digital marketing,
+            Data analytics, and Web development.
+          </p>
         </div>
       </div>
+
     </div>
+
   </div>
 </section>
 
@@ -809,44 +1091,53 @@ I'm driven by the opportunity to create impactful digital experiences that blend
 <script>
   // Mobile menu
   function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("open");
   }
+
   function closeMenu() {
-    document.getElementById('mobileMenu').classList.remove('open');
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.remove("open");
   }
 
   // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
+  const revealEls = document.querySelectorAll(".reveal");
+
   const io = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 60);
-        io.unobserve(e.target);
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        io.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
 
-  // Active nav link
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) cur = s.getAttribute('id');
+  revealEls.forEach((el) => io.observe(el));
+
+  // Active navigation link
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  window.addEventListener("scroll", () => {
+    let cur = "";
+
+    sections.forEach((section) => {
+      if (window.scrollY >= section.offsetTop - 100) {
+        cur = section.getAttribute("id");
+      }
     });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--blue)' : '';
+
+    navLinks.forEach((link) => {
+      link.style.color =
+        link.getAttribute("href") === "#" + cur ? "var(--blue)" : "";
     });
   });
 
   // Resume download
   function downloadResume(e) {
-  e.preventDefault();
-  window.open('./Hepzi resume.pdf', '_blank');
-}
-
- 
+    e.preventDefault();
+    window.open("./Hepzi resume.pdf", "_blank");
+  }
 </script>
 </body>
 </html>
