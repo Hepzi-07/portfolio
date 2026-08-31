@@ -373,69 +373,222 @@
       vertical-align: middle;
     }
 
-   /* ── ACHIEVEMENTS ── */
+   //* =========================================================
+   PREMIUM ACHIEVEMENTS SECTION
+   ========================================================= */
+
 #achievements {
-  background: linear-gradient(135deg, #F8FAFF 0%, #EEF4FF 100%);
   position: relative;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(59, 130, 246, 0.10), transparent 30%),
+    radial-gradient(circle at 5% 90%, rgba(27, 79, 216, 0.08), transparent 30%),
+    #F7F9FF;
   overflow: hidden;
 }
 
+/* Decorative background circles */
 #achievements::before {
-  content: '';
+  content: "";
   position: absolute;
-  width: 320px;
-  height: 320px;
-  top: -120px;
-  right: -80px;
-  background: radial-gradient(
-    circle,
-    rgba(59, 130, 246, 0.12) 0%,
-    transparent 70%
-  );
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
+  top: -220px;
+  right: -150px;
+  border: 1px solid rgba(59, 130, 246, 0.10);
   pointer-events: none;
 }
 
 #achievements::after {
-  content: '';
+  content: "";
   position: absolute;
-  width: 260px;
-  height: 260px;
-  bottom: -120px;
-  left: -80px;
-  background: radial-gradient(
-    circle,
-    rgba(27, 79, 216, 0.10) 0%,
-    transparent 70%
-  );
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
+  bottom: -170px;
+  left: -120px;
+  border: 1px solid rgba(59, 130, 246, 0.08);
   pointer-events: none;
 }
 
 #achievements .section-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Achievement Grid */
-.ach-grid {
+
+/* =========================================================
+   INTRO TEXT
+   ========================================================= */
+
+.achievements-intro {
+  max-width: 650px;
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 2.8rem;
+}
+
+
+/* =========================================================
+   FEATURED ACHIEVEMENT
+   ========================================================= */
+
+.achievement-featured {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+
+  background: #FFFFFF;
+  border: 1px solid #D7E3FF;
+  border-radius: 24px;
+  padding: 1.25rem;
+
+  box-shadow:
+    0 15px 45px rgba(27, 79, 216, 0.10);
+
+  margin-bottom: 2rem;
+
+  transition: all 0.35s ease;
+}
+
+.achievement-featured:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 25px 60px rgba(27, 79, 216, 0.16);
+
+  border-color: #AFC8FF;
+}
+
+
+/* =========================================================
+   FEATURED IMAGE
+   ========================================================= */
+
+.achievement-image {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #EAF1FF;
+  position: relative;
+}
+
+.achievement-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 22, 40, 0.05),
+    rgba(27, 79, 216, 0.12)
+  );
+  pointer-events: none;
+}
+
+.achievement-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.achievement-featured:hover .achievement-image img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   FEATURED CONTENT
+   ========================================================= */
+
+.achievement-content {
+  padding: 1rem 1.5rem 1rem 0.5rem;
+}
+
+.achievement-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  background: #FFF7E6;
+  color: #B45309;
+
+  border: 1px solid #F6D58A;
+
+  padding: 0.4rem 0.8rem;
+  border-radius: 100px;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  margin-bottom: 1rem;
+}
+
+.achievement-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.25;
+
+  color: var(--navy);
+
+  margin-bottom: 0.55rem;
+}
+
+.achievement-org {
+  color: var(--blue);
+  font-size: 0.86rem;
+  font-weight: 700;
+
+  margin-bottom: 1rem;
+}
+
+.achievement-content p {
+  color: #64748B;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.achievement-content strong {
+  color: var(--navy);
+}
+
+
+/* =========================================================
+   ACHIEVEMENT GRID
+   ========================================================= */
+
+.achievements-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-/* Achievement Card */
-.ach-card {
+
+/* =========================================================
+   NORMAL ACHIEVEMENT CARD
+   ========================================================= */
+
+.achievement-card {
   position: relative;
+
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--border);
+
+  border: 1px solid #DCE6F8;
   border-radius: 18px;
-  padding: 1.6rem;
-  box-shadow: 0 8px 30px rgba(27, 79, 216, 0.08);
+
+  padding: 1.4rem;
 
   display: flex;
-  gap: 1rem;
   align-items: flex-start;
+  gap: 1rem;
+
+  box-shadow:
+    0 7px 25px rgba(27, 79, 216, 0.06);
 
   transition:
     transform 0.3s ease,
@@ -443,18 +596,130 @@
     border-color 0.3s ease;
 }
 
-/* Hover */
-.ach-card:hover {
-  transform: translateY(-7px);
-  border-color: #9DBBFF;
-  box-shadow: 0 16px 40px rgba(27, 79, 216, 0.15);
+.achievement-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #B7CCF8;
+
+  box-shadow:
+    0 18px 40px rgba(27, 79, 216, 0.12);
 }
 
-/* Achievement Icon */
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.achievement-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #EEF4FF,
+    #DCE9FF
+  );
+
+  border: 1px solid #CBDCFF;
+
+  font-size: 1.35rem;
+
+  box-shadow:
+    0 5px 15px rgba(27, 79, 216, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.achievement-card h4 {
+  color: var(--navy);
+
+  font-size: 0.92rem;
+  font-weight: 750;
+
+  line-height: 1.4;
+
+  margin-bottom: 0.35rem;
+}
+
+.achievement-card p {
+  color: var(--grey);
+
+  font-size: 0.8rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   GOLD HIGHLIGHT FOR HACKATHON
+   ========================================================= */
+
+.achievement-featured {
+  border-top: 3px solid #F59E0B;
+}
+
+.achievement-featured .achievement-image {
+  border: 1px solid #F3E3B7;
+}
+
+
+
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.ach-card {
+  position: relative;
+
+  background: #FFFFFF;
+
+  border: 1px solid #DCE6F8;
+  border-radius: 18px;
+
+  padding: 1.4rem;
+
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  box-shadow:
+    0 7px 25px rgba(27, 79, 216, 0.06);
+
+  transition: all 0.3s ease;
+}
+
+.ach-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #B7CCF8;
+
+  box-shadow:
+    0 18px 40px rgba(27, 79, 216, 0.12);
+}
+
 .ach-icon {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
 
   display: flex;
   align-items: center;
@@ -462,111 +727,93 @@
 
   background: linear-gradient(
     135deg,
-    var(--ice),
+    #EEF4FF,
     #DCE9FF
   );
 
-  border: 1px solid #C7D9FF;
+  border: 1px solid #CBDCFF;
   border-radius: 14px;
 
-  font-size: 1.45rem;
+  font-size: 1.35rem;
 
-  box-shadow:
-    0 6px 16px rgba(27, 79, 216, 0.10);
-
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .ach-card:hover .ach-icon {
-  transform: scale(1.08) rotate(-3deg);
+  transform: rotate(-5deg) scale(1.08);
 }
 
-/* Achievement Content */
 .ach-card h4 {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 750;
   color: var(--navy);
-  margin-bottom: 0.4rem;
-  line-height: 1.4;
+  margin-bottom: 0.35rem;
 }
 
 .ach-card p {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--grey);
   line-height: 1.6;
 }
 
-/* Highlight First Achievement */
-.ach-card:first-child {
-  border-top: 3px solid var(--blue);
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .achievement-featured {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .achievement-image {
+    height: 280px;
+  }
+
+  .achievement-content {
+    padding: 0.5rem 0.75rem 1rem;
+  }
+
+  .achievements-grid,
+  .ach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Highlight Hackathon Achievement */
-.ach-card:nth-child(5) {
-  border-top: 3px solid #F59E0B;
+
+@media (max-width: 600px) {
+
+  .achievement-featured {
+    padding: 0.8rem;
+    border-radius: 18px;
+  }
+
+  .achievement-image {
+    height: 210px;
+    border-radius: 14px;
+  }
+
+  .achievement-content {
+    padding: 0.5rem;
+  }
+
+  .achievement-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .achievements-grid,
+  .ach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-card,
+  .ach-card {
+    padding: 1.2rem;
+  }
+
 }
-
-/* Optional achievement badge */
-.ach-card::after {
-  content: '';
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 7px;
-  height: 7px;
-  background: #60A5FA;
-  border-radius: 50%;
-  opacity: 0.7;
-}
-
-/* ── ACHIEVEMENT IMAGE SUPPORT ── */
-.ach-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  border: 1px solid var(--border);
-  display: block;
-}
-
-/* Card with image */
-.ach-card.has-image {
-  display: block;
-  padding: 1.25rem;
-}
-
-.ach-card.has-image .ach-icon {
-  display: none;
-}
-
-/* ── HACKATHON FEATURE CARD ── */
-.ach-card.hackathon {
-  background:
-    linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F5F8FF 100%
-    );
-
-  border: 1.5px solid #B9CEFF;
-  box-shadow: 0 12px 35px rgba(27, 79, 216, 0.13);
-}
-
-.ach-card.hackathon h4 {
-  color: var(--blue);
-}
-
-.ach-card.hackathon .ach-icon {
-  background: linear-gradient(
-    135deg,
-    #FFF7E6,
-    #FFE8B3
-  );
-
-  border-color: #F6D58A;
-}
-
 /* ── RESPONSIVE ── */
 
 @media (max-width: 900px) {
