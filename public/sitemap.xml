@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://hepzibah-web.netlify.app/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://hepzibah-web.netlify.app/assets/images/logo.jpg</image:loc>
+      <image:title>Hepzibah E (H.E) - Brand Logo</image:title>
+      <image:caption>Official H.E Brand Logo and Monogram Emblem for Hepzibah E.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hepzibah-web.netlify.app/assets/images/aicci_hackathon.JPG</image:loc>
+      <image:title>AICCI National Startup Summit 2026 Hackathon 1st Runner-Up</image:title>
+      <image:caption>Hepzibah E receiving 1st Runner-Up award at the AICCI National Startup Summit 2026 Startup Hackathon in association with StartupTN.</image:caption>
+    </image:image>
+  </url>
+</urlset>

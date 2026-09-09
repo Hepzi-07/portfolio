@@ -1,0 +1,23 @@
+{
+  "name": "Hepzibah E - SEO Specialist & Digital Marketing Executive",
+  "short_name": "Hepzibah E",
+  "description": "Portfolio of Hepzibah E showcasing Technical SEO, Digital Marketing, Google Analytics 4, Search Console, and Web Development.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050714",
+  "theme_color": "#050714",
+  "icons": [
+    {
+      "src": "/assets/images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

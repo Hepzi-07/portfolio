@@ -1,0 +1,29 @@
+# Hepzibah E - Portfolio & Professional Profile
+
+> Personal portfolio and professional profile of Hepzibah E, SEO Specialist and Digital Marketing Executive with a background in Computer Science & Engineering from Anna University.
+
+## Core Specializations
+- **Search Engine Optimization (SEO)**: Technical SEO, On-Page SEO, Keyword Research, Search Console Optimization, SEO Audits, Content Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO).
+- **Digital Marketing & Growth**: Content Marketing, Social Media Strategy, Campaign Planning, Brand Storytelling, Conversion Optimization.
+- **Analytics & Business Intelligence**: Google Analytics 4 (GA4), Google Search Console (GSC), IBM Cognos Analytics, Data Visualization, Performance Reporting.
+- **Web Development**: HTML5, CSS3, JavaScript, Responsive Web Design, Core Web Vitals Optimization, Front-End UI Development.
+
+## Professional Experience
+- **Digital Marketing Intern** at Vdart Academy: Managed content writing, editorial planning, social media campaigns, and organic SEO initiatives.
+- **IBM Cognos Analytics Intern** at Adroit Technologies Innovative Solutions Pvt Ltd (via IBM): Business intelligence reporting, data visualization, and analytics dashboards.
+- **Web Development Intern** at Corizo: Front-end development, responsive web design using HTML5, CSS3, and JavaScript.
+- **Web Development Intern** at Hitakey Tech Solutions Pvt Ltd: UI styling and client-side scripting in production workflows.
+
+## Key Achievements & Awards
+- **1st Runner-Up — AICCI National Startup Summit 2026 Startup Hackathon**: Port & Logistics Track (in association with StartupTN) for "Freight Match" (AI-powered freight marketplace concept).
+- **Academic Excellence**: B.E. Computer Science and Engineering at Dr. G. U. Pope College of Engineering (Anna University) with a CGPA of 8.62.
+
+## Contact & Links
+- **Website**: https://hepzibah-web.netlify.app/
+- **Email**: hepzibah307@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/hepzibah-e
+- **GitHub**: https://github.com/Hepzi-07
+- **Location**: Tamil Nadu, India
+
+## Extended Context
+For a comprehensive markdown document including detailed project notes, course details, and FAQ, see [llms-full.txt](https://hepzibah-web.netlify.app/llms-full.txt).
